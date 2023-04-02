@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Estam University e-lms | Login</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="description"
+        content="Ecole Superieure Des Technologies Advances de Management (ESTAM), Benin Republic, Official Website 2019">
+    <meta name="keywords"
+        content="Estam University, University, Benin Republic, Cotonou, Cotonou Benin Republic, Official Estam University, Estam, EstamUniversity, Benin School, Benin University">
+    <meta name="author" content="Ecole Superieure Des Technologies Advances de Management (ESTAM)">
+  
+    <!-- Favicon -->
+    <link href="../static/img/logo.png" rel="icon">
+    <link href="../static/css/login.css" rel="stylesheet">
+    <!-- Stylesheet -->
+
+  
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.ihavecookies.js"></script>
+    <script type="text/javascript">
+        var options = {
+            title: '&#x1F36A; Accept Cookies & Privacy Policy?',
+            message: 'We use cookies to make sure that our website works properly, as well as some ‘optional’ cookies to personalise content. Further information can be found in our privacy policy. Click the <strong>accept</strong> button below to see the optional callback in action...',
+            delay: 600,
+            expires: 1,
+            link: '#privacy',
+            onAccept: function () {
+                var myPreferences = $.fn.ihavecookies.cookie();
+                console.log('The following preferences were saved...');
+                console.log(myPreferences);
+            },
+            uncheckBoxes: true,
+            acceptBtnLabel: 'Accept Cookies',
+            moreInfoLabel: '<a href="policy.html"> More information</a>',
+            cookieTypesTitle: 'Select which cookies you want to accept',
+            fixedCookieTypeLabel: 'Essential',
+            fixedCookieTypeDesc: 'These are essential for the website to work correctly.'
+        }
+
+        $(document).ready(function () {
+            $('body').ihavecookies(options);
+
+            if ($.fn.ihavecookies.preference('marketing') === true) {
+                console.log('This should run because marketing is accepted.');
+            }
+
+            $('#ihavecookiesBtn').on('click', function () {
+                $('body').ihavecookies(options, 'reinit');
+            });
+        });
+
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Quicksand:400,500" rel="stylesheet">
+    <link href="../static/css/popup.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper login-1">
+        <div class="container">
+            <div class="col-left">
+                <div class="login-text">
+                    <h2>Welcome Back</h2>
+                    <p>Create your account.<br>It's totally free.</p>
+                    <a class="btn" href="./register.html">Sign Up</a>
+                </div>
+            </div>
+            <div class="col-right">
+                <div class="login-form">
+                    <h2>Login</h2>
+                    <form>
+                        <p>
+                            <label>Email address<span>*</span></label>
+                            <input type="text" placeholder="Email" required>
+                        </p>
+                        <p>
+                            <label>Password<span>*</span></label>
+                            <input type="password" placeholder="Password" required>
+                        </p>
+                        <p>
+                            <input type="submit" value="Login" />
+                        </p>
+                        <p>
+                            <a href="">Forget Password?</a>
+                        </p>
+                        <hr>
+                        <div class="credit">
+                            <a href="https://github.com/zenoftech">Estam University</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
